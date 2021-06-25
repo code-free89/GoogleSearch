@@ -9,22 +9,36 @@
     </button>
   </div>
   <div class="p-2 bg-white">
-    <div class="w-full p-2 flex justify-between items-center">
-      <div class="text-gray-600">
-        Nagyjából {{ searchInfo.totalResults }} találat ({{ searchInfo.searchTime }} másodperc)
+    <div class="w-full p-2">
+      <div class="flex items-center justify-between w-full">
+        <div class="text-gray-600">
+          Nagyjából {{ searchInfo.totalResults }} találat ({{ searchInfo.searchTime }} másodperc)
+        </div>
+        <div class="flex space-x-2 items-center">
+          Rendezés:
+          <mat-form-field appearance="fill">
+            <mat-select value="importance">
+              <mat-option value="importance">
+                Importance
+              </mat-option>
+              <mat-option value="date">
+                Date
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
       </div>
-      <div class="flex space-x-2 items-center">
-        Rendezés:
-        <mat-form-field appearance="fill">
-          <mat-select value="importance">
-            <mat-option value="importance">
-              Importance
-            </mat-option>
-            <mat-option value="date">
-              Date
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+      <app-suggestion [suggestions]="suggestions"></app-suggestion>
+      <div class="w-full" *ngFor="let searchItem of searchResults">
+        <app-search-item [item]="searchItem"></app-search-item>
+      </div>
+      <div *ngIf="searchResults.length">
+        <mat-paginator [length]="searchInfo.totalResults"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          (page)="getServerData($event)"
+        >
+        </mat-paginator>
       </div>
     </div>
   </div>

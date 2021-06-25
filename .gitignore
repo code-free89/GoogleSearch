@@ -9,6 +9,7 @@
 
 # dependencies
 /node_modules
+.environment.proud.ts
 
 # profiling files
 chrome-profiler-events*.json

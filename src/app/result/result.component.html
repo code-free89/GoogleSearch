@@ -8,4 +8,24 @@
       <mat-icon>clear</mat-icon>
     </button>
   </div>
+  <div class="p-2 bg-white">
+    <div class="w-full p-2 flex justify-between items-center">
+      <div class="text-gray-600">
+        Nagyjából {{ searchInfo.totalResults }} találat ({{ searchInfo.searchTime }} másodperc)
+      </div>
+      <div class="flex space-x-2 items-center">
+        Rendezés:
+        <mat-form-field appearance="fill">
+          <mat-select value="importance">
+            <mat-option value="importance">
+              Importance
+            </mat-option>
+            <mat-option value="date">
+              Date
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/GoogleSearch",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",

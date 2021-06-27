@@ -4,7 +4,7 @@
     <button mat-icon-button matSuffix (click)="onSearch()" class="absolute right-16">
       <mat-icon>search</mat-icon>
     </button>
-    <button mat-icon-button matSuffix class="ml-3 absolute right-5" (click)="query=''">
+    <button mat-icon-button matSuffix class="ml-3 absolute right-5" (click)="clear()">
       <mat-icon>clear</mat-icon>
     </button>
   </div>
@@ -17,8 +17,8 @@
         <div class="flex space-x-2 items-center">
           Rendezés:
           <mat-form-field appearance="fill">
-            <mat-select value="importance">
-              <mat-option value="importance">
+            <mat-select [(ngModel)]="sort" (ngModelChange)="getServerData({pageIndex: 0, pageSize: 10})">
+              <mat-option value="review-rating:d:s">
                 Importance
               </mat-option>
               <mat-option value="date">
@@ -39,6 +39,9 @@
           (page)="getServerData($event)"
         >
         </mat-paginator>
+      </div>
+      <div *ngIf="!searchResults.length">
+        No results
       </div>
     </div>
   </div>

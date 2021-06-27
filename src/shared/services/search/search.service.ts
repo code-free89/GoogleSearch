@@ -14,12 +14,13 @@ export class SearchService {
     
   }
 
-  getSearch(key: string, cx: string, q: string, page: number): Observable<any> {
+  getSearch(key: string, cx: string, q: string, page: number, sort: string): Observable<any> {
     let params: HttpParams = new HttpParams();
     params = params.append('key', key);
     params = params.append('cx', cx);
     params = params.append('q', q);
     params = params.append('start', page);
+    params = params.append('sort', sort);
     return this.httpClient.get('https://www.googleapis.com/customsearch/v1', {params: params}).pipe(map(res => {
       return res;
     }));

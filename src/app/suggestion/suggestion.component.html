@@ -1,6 +1,6 @@
 <div class="text-lg flex hover:underline w-full" *ngIf="suggestions.length">
   Search suggestion: &nbsp; &nbsp;
-  <div class="text-blue-700 font-bold" *ngFor="let suggestion of suggestions">
+  <div class="text-blue-700 font-bold cursor-pointer" *ngFor="let suggestion of suggestions" [routerLink]="['/result']" [queryParams]="{query: suggestion}">
     {{ suggestion }} &nbsp; &nbsp;
   </div>
 </div>

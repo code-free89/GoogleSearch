@@ -1,3 +1,36 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.w-full {
+  width: 100%;
+}
+
+.mt-20 {
+  margin-top: 80px;
+} 
+
+.flex {
+  display: flex;
+} 
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+} 
+
+.justify-center {
+  justify-content: space-between;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-xl {
+  max-width: 800px;
+}

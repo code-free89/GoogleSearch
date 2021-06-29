@@ -1,9 +1,9 @@
 <div class="w-full mt-20 space-y-10 flex flex-wrap items-center justify-center">
-  <div class="w-full">
+  <div class="w-full flex">
     <img src="../../assets/images/logo/gugel_logo.svg" width="auto" height="auto" class="mx-auto" />
   </div>
   
-  <mat-form-field appearance="legacy" class="w-full max-w-xl mx-4">
+  <mat-form-field appearance="legacy" class="w-full max-w-xl mx-auto">
     <mat-label>Mit keressek a mai napon...</mat-label>
     <input matInput placeholder="" [(ngModel)]="query" (keydown.enter)="onSearch()">
     <button mat-icon-button matSuffix (click)="onSearch()">
